@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    tools:context=".GameActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorSurface"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="@string/app_name"
+            app:titleTextColor="?attr/colorOnSurface" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_medium"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- Current Player Status Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/statusCard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:cardBackgroundColor="?attr/colorSurfaceVariant"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="@dimen/elevation_low"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/currentPlayerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_player"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:padding="@dimen/padding_medium"
+                android:gravity="center"
+                android:layout_gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Game Board Container -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/boardContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginBottom="@dimen/margin_large"
+            app:cardBackgroundColor="?attr/colorSurface"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="@dimen/elevation_medium"
+            app:layout_constraintTop_toBottomOf="@id/statusCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/resetButton">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/board_padding"
+                android:layout_gravity="center">
+
+                <!-- Row 1 -->
+                <Button
+                    android:id="@+id/cell00"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/cell01"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cell00" />
+
+                <Button
+                    android:id="@+id/cell02"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cell01" />
+
+                <!-- Row 2 -->
+                <Button
+                    android:id="@+id/cell10"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cell00"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/cell11"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cell01"
+                    app:layout_constraintStart_toEndOf="@id/cell10" />
+
+                <Button
+                    android:id="@+id/cell12"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cell02"
+                    app:layout_constraintStart_toEndOf="@id/cell11" />
+
+                <!-- Row 3 -->
+                <Button
+                    android:id="@+id/cell20"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cell10"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/cell21"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cell11"
+                    app:layout_constraintStart_toEndOf="@id/cell20" />
+
+                <Button
+                    android:id="@+id/cell22"
+                    android:layout_width="@dimen/cell_size"
+                    android:layout_height="@dimen/cell_size"
+                    android:layout_margin="@dimen/cell_margin"
+                    android:textSize="@dimen/cell_text_size"
+                    android:textStyle="bold"
+                    android:background="@drawable/cell_background_pressed"
+                    android:stateListAnimator="@null"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:layout_constraintTop_toBottomOf="@id/cell12"
+                    app:layout_constraintStart_toEndOf="@id/cell21" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Reset Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resetButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/reset"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="?attr/colorOnSurface"
+            android:background="@drawable/button_secondary"
+            android:paddingHorizontal="@dimen/button_padding_horizontal"
+            android:layout_marginTop="@dimen/margin_large"
+            android:contentDescription="@string/reset_game"
+            app:cornerRadius="@dimen/button_corner_radius"
+            app:strokeColor="?attr/colorOutline"
+            app:strokeWidth="1dp"
+            app:rippleColor="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Game Result Overlay -->
+    <FrameLayout
+        android:id="@+id/resultOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:elevation="20dp"
+        android:alpha="0"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/resultTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/victory_title"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="8"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/resultMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/player_x_wins"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_marginBottom="48dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/playAgainButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play_again"
+                app:cornerRadius="24dp"
+                android:paddingHorizontal="48dp"
+                android:paddingVertical="12dp"
+                android:textSize="18sp"
+                app:backgroundTint="?attr/colorPrimary"/>
+            
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backToMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="16dp"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="two_player">Two Player</string>
+    <string name="play_vs_ai">Play vs AI</string>
+    <string name="current_player">Current Player: %1$s</string>
+    <string name="player_x">Player X</string>
+    <string name="player_o">Player O</string>
+    <string name="game_over">Game Over</string>
+    <string name="player_x_wins">Player X Wins!</string>
+    <string name="player_o_wins">Player O Wins!</string>
+    <string name="draw">It\'s a Draw!</string>
+    <string name="new_game">New Game</string>
+    <string name="reset">Reset</string>
+    <string name="play_again">Play Again</string>
+    <string name="back">Back</string>
+    <string name="ai_thinking">AI is thinking...</string>
+    <string name="cell_empty">Empty cell at row %1$d, column %2$d</string>
+    <string name="cell_x">X at row %1$d, column %2$d</string>
+    <string name="cell_o">O at row %1$d, column %2$d</string>
+    <string name="reset_game">Reset game</string>
+    <string name="victory_title">VICTORY!</string>
+    <string name="defeat_title">DEFEAT</string>
+    <string name="draw_title">DRAW</string>
+</resources>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design 3 Dark Theme Colors -->
+    <color name="md_theme_dark_primary">#D0BCFF</color>
+    <color name="md_theme_dark_onPrimary">#381E72</color>
+    <color name="md_theme_dark_primaryContainer">#4F378B</color>
+    <color name="md_theme_dark_onPrimaryContainer">#EADDFF</color>
+    
+    <color name="md_theme_dark_secondary">#CCC2DC</color>
+    <color name="md_theme_dark_onSecondary">#332D41</color>
+    <color name="md_theme_dark_secondaryContainer">#4A4458</color>
+    <color name="md_theme_dark_onSecondaryContainer">#E8DEF8</color>
+    
+    <color name="md_theme_dark_tertiary">#EFB8C8</color>
+    <color name="md_theme_dark_onTertiary">#492532</color>
+    <color name="md_theme_dark_tertiaryContainer">#633B48</color>
+    <color name="md_theme_dark_onTertiaryContainer">#FFD8E4</color>
+    
+    <color name="md_theme_dark_error">#F2B8B5</color>
+    <color name="md_theme_dark_errorContainer">#93000A</color>
+    <color name="md_theme_dark_onError">#601410</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD6</color>
+    
+    <color name="md_theme_dark_background">#1C1B1F</color>
+    <color name="md_theme_dark_onBackground">#E6E1E5</color>
+    <color name="md_theme_dark_surface">#1C1B1F</color>
+    <color name="md_theme_dark_onSurface">#E6E1E5</color>
+    <color name="md_theme_dark_surfaceVariant">#49454F</color>
+    <color name="md_theme_dark_onSurfaceVariant">#CAC4D0</color>
+    <color name="md_theme_dark_outline">#938F99</color>
+    <color name="md_theme_dark_outlineVariant">#49454F</color>
+    
+    <!-- Game-specific colors (adjusted for dark theme) -->
+    <color name="player_x_color">#64B5F6</color>
+    <color name="player_o_color">#EF5350</color>
+    <color name="player_x_light">#1E3A5F</color>
+    <color name="player_o_light">#5C2A2A</color>
+    
+    <!-- Board colors (dark theme) -->
+    <color name="board_background">#1C1B1F</color>
+    <color name="board_cell_background">#2C2B2F</color>
+    <color name="board_cell_border">#49454F</color>
+    <color name="board_cell_pressed">#3C3B3F</color>
+    <color name="board_grid_line">#49454F</color>
+    
+    <!-- Button colors (dark theme) -->
+    <color name="button_background">#2C2B2F</color>
+    <color name="button_pressed">#3C3B3F</color>
+    <color name="button_primary">#D0BCFF</color>
+    <color name="button_primary_text">#381E72</color>
+    
+    <!-- Status colors (dark theme) -->
+    <color name="status_text">#E6E1E5</color>
+    <color name="status_text_secondary">#CAC4D0</color>
+</resources>
+
